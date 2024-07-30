@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,14 +39,18 @@ namespace IceTask3
                 lScripts.Add(script);
             }
         }
+        private void showScript()
+        {
+            txtViewScript.Clear();
+            foreach (var script in lScripts)
+            {
+                txtViewScript.AppendText(script.Data.Index() + ":\t" + script.Data.Line() + "\n");
+            }
+        }
 
         private void btnShowScript_Click(object sender, RoutedEventArgs e)
         {
-            txtViewScript.Clear();
-            foreach (var script in lScripts) 
-            {
-                txtViewScript.AppendText(script.Data.Index() + ": " + script.Data.Line() + "\n");
-            }
+            showScript();
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -54,6 +59,22 @@ namespace IceTask3
         }
 
         private void btnSortScript_Click(object sender, RoutedEventArgs e)
+        {
+            lScripts.Sort();
+            showScript();
+        }
+
+        private void btnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSortLine_Click(object sender, RoutedEventArgs e)
         {
 
         }
