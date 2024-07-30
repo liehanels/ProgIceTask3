@@ -19,11 +19,11 @@
             </TabItem>
             <TabItem x:Name="tabWindow2" Header="Full Story" FontSize="16">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="btnSortScript" Content="Sort Script" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="34" Width="126" FontSize="20"/>
-                    <Button x:Name="btnShowScript" Content="Show Script" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="126" FontSize="20"/>
+                    <Button x:Name="btnSortScript" Content="Sort Script" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="34" Width="126" FontSize="20" Click="btnSortScript_Click"/>
+                    <Button x:Name="btnShowScript" Content="Show Script" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="126" FontSize="20" Click="btnShowScript_Click"/>
                     <Button x:Name="btnUnsortScript" Content="Mix Script" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Height="34" Width="126" FontSize="20"/>
                     <TextBox x:Name="txtViewScript" Margin="149,10,18,44" TextWrapping="Wrap"/>
-                    <Button x:Name="btnClear" Content="Clear Display" HorizontalAlignment="Left" Margin="10,0,0,44" Width="126" FontSize="20" Height="34" VerticalAlignment="Bottom"/>
+                    <Button x:Name="btnClear" Content="Clear Display" HorizontalAlignment="Left" Margin="10,0,0,44" Width="126" FontSize="20" Height="34" VerticalAlignment="Bottom" Click="btnClear_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
