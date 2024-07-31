@@ -64,13 +64,8 @@ namespace IceTask3
             {
                 throw new Exception("Nodes not next to each other");
             }
-            /*if(node1.Previous == null)
-            {
-                throw new Exception("No item before: " + node1.Data.Index());
-            }*/
             if(node1.Previous != null && node2.Next != null)
             {
-                //if (node2.Next != null) 
                 node2.Next.Previous = node1;
                 node1.Previous.Next = node2;
                 node2.Previous = node1.Previous;
@@ -99,10 +94,6 @@ namespace IceTask3
         }
         public void Sort()
         {
-            //current = current.Next;
-            //current = current.Next;
-            //Swap(current, current.Next);
-            //int counter = 0;
             bool iterate = true;
             while (iterate)
             {
@@ -110,29 +101,32 @@ namespace IceTask3
                 iterate = false;
                 while (true)
                 {
-                    //if (current.Next != null && current.Next.Data.Index() != 8) { continue; }
                     if (current == null || current.Next == null) { break; }
                     if (current.Next != null && current.Data.Index() > current.Next.Data.Index())
                     {
                         Swap(current, current.Next);
-                        //current = current.Previous;
                         iterate = true;
                     }
                     current = current.Next;
-                    //counter++;
-                    //if(counter == 2) { break; }
-                    /*Node next = current.Next;
-                    {
-                        while (next.Next != null)
-                        {
-                            Node temp = next;
-                            next = current;
-                            current = temp;
-                            next = next.Next;
-                        }
-                    }
-                    current = current.Next;*/
                 }
+            }
+        }
+        public string getNext(int i) 
+        {
+            Node node = First;
+            if(i == Head.Data.Index()) { return node.Data.Line() ; }
+            else
+            {
+                return node.Next.Data.Line();
+            }
+        }
+        public string getPrevious(int i) 
+        {
+            Node node = Last;
+            if (i == Tail.Data.Index()) { return node.Data.Line(); }
+            else
+            {
+                return node.Previous.Data.Line();
             }
         }
     }
