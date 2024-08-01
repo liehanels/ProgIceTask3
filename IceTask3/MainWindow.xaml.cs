@@ -18,7 +18,7 @@ namespace IceTask3
     public partial class MainWindow : Window
     {
         LinkedList lScripts = new LinkedList();
-        int currentLine = 1;
+        int currentLine = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -67,18 +67,28 @@ namespace IceTask3
 
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            txtViewLine.Text = lScripts.getPrevious(currentLine);
-            if (currentLine >= 1 )
+            if (currentLine == 0 )
             {
+                txtViewLine.Text = "The story starts...";
+                currentLine = 1;
+            }
+            else if (currentLine >= 1)
+            {
+                txtViewLine.Text = currentLine + ": " + lScripts.getPrevious(currentLine);
                 currentLine--;
             }
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
-            txtViewLine.Text = lScripts.getNext(currentLine);
-            if (currentLine <= 12)
+            if (currentLine == lScripts.Length + 1)
             {
+                txtViewLine.Text = "The end.";
+                currentLine = lScripts.Length;
+            }
+            else if (currentLine <= lScripts.Length)
+            {
+                txtViewLine.Text = currentLine + ": " + lScripts.getNext(currentLine);
                 currentLine++;
             }
         }

@@ -113,21 +113,11 @@ namespace IceTask3
         }
         public string getNext(int i) 
         {
-            Node node = First;
-            if(i == Head.Data.Index()) { return node.Data.Line() ; }
-            else
-            {
-                return node.Next.Data.Line();
-            }
+            return Find(i);
         }
         public string getPrevious(int i) 
         {
-            Node node = Last;
-            if (i == Tail.Data.Index()) { return node.Data.Line(); }
-            else
-            {
-                return node.Previous.Data.Line();
-            }
+            return Find(i);
         }
     }
 }
